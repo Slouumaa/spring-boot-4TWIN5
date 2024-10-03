@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -16,4 +18,6 @@ public class Piste {
     private Color color;
     private int length;
     private int slope;
+    @ManyToMany
+    Set<Skier>skiers;
 }

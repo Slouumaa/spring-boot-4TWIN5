@@ -1,11 +1,11 @@
 package tn.esprit.ChaouchAbdessalem4Twin5.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
+
 
 @Entity
 public class Skier {
@@ -16,6 +16,11 @@ public class Skier {
     private String lastName;
     private LocalDate dateOfBirth;
     private String city;
-
+    @OneToOne(mappedBy = "skier")
+    Subscription subscription;
+    @ManyToMany(mappedBy = "skiers")
+    Set<Piste> pisteList;
+    @OneToMany(mappedBy = "skier")
+    Set<Registration> registrations;
 
 }

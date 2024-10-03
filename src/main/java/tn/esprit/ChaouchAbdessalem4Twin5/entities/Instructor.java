@@ -1,11 +1,10 @@
 package tn.esprit.ChaouchAbdessalem4Twin5.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Instructor {
@@ -15,6 +14,7 @@ public class Instructor {
     private String firstName;
     private String lastName;
     private LocalDate dateOfHire;
+    @OneToMany
+    Set<Course> Courses;
 
-    // Getters and Setters
 }

@@ -10,10 +10,11 @@ public class Registration {
     private int numWeek;
 
     @ManyToOne
-    private Skier skier;
+    Skier skier;
 
     @ManyToOne
-    private Course course;
+    Course course;
+
 
 
 }

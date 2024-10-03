@@ -15,6 +15,7 @@ public class Subscription {
 
     @Enumerated(EnumType.STRING)
     private TypeSubscription typeSub;
-
+    @OneToOne
+    Skier skier;
 
 }
